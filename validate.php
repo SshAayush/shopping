@@ -4,8 +4,13 @@ session_start();
 // $name = $_POST['fullname'];
 // $email = $_POST['email'];
 // $phone = $_POST['phone_no'];
-$amount = $_SESSION['amount']
+$amount = $_SESSION['amount'];
+
+echo $amount. "tyoyo";
+
 $paisa = $amount * 100;
+
+// echo $paisa;
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -18,22 +23,22 @@ CURLOPT_FOLLOWLOCATION => true,
 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 CURLOPT_CUSTOMREQUEST => 'POST',
 CURLOPT_POSTFIELDS =>'{
-"return_url": "http://localhost/koseli/success.php",
+"return_url": "http://localhost/shopping/success.php",
 "website_url": "https://example.com/",
 "amount": "' . $paisa . '",
 "purchase_order_id": "Order01",
     "purchase_order_name": "test",
 
 "customer_info": {
-    "name": "' . $name . '",
-    "email": "' . $email . '",
-    "phone": "' . $phone . '"
+    "name": "bigyan",
+    "email": "bigyan@gmail.com",
+    "phone": "9800000002"
 }
 }
 
 ',
 CURLOPT_HTTPHEADER => array(
-    'Authorization: key 4c9dafc163bd469e82ae80d3146e49c4',
+    'Authorization: key 06ed1d84c26d4b539214813735bfaa9c',
     'Content-Type: application/json',
 ),
 ));

@@ -223,7 +223,7 @@ if(!empty($_SESSION['cart'])){
 					</td>
 					<td class="cart-product-name-info">
 						<h4 class='cart-product-description'><a href="product-details.php?pid=<?php echo htmlentities($pd=$row['id']);?>" ><?php echo $row['productName'];
-
+						 	
 $_SESSION['sid']=$pd;
 						 ?></a></h4>
 						<div class="row">
@@ -403,6 +403,9 @@ echo "Your shopping Cart is empty";
 <?php echo include('includes/brands-slider.php');?>
 </div>
 </div>
+<?php 
+	$_SESSION['amount'] = $totalprice;
+?>
 <?php include('includes/footer.php');?>
 
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
